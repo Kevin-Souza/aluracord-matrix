@@ -1,5 +1,6 @@
 import appConfig from '../config.json';
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 //componente para estilos globais da aplicação
@@ -67,6 +68,8 @@ function Titulo(props) {
 export default function PaginaInicial() {
     //const username = 'kevin-souza';
     const [username, setUsername]= React.useState('kevin-souza');
+    const roteamento = useRouter();
+    // acima temos exemplos de hooks no react são eles:  useState e useRouter
 
     return (
         <>
@@ -97,6 +100,16 @@ export default function PaginaInicial() {
                     {/* Formulário */}
                     <Box
                         as="form"
+                        onSubmit={function (infosDoEvento) {
+                            infosDoEvento.preventDefault();
+                            //console.log('Alguem submeteu o form');
+                            /*função tradicional do navegador para transação de pagina window.location...*/
+                            // window.location.href = '/chat';
+
+                            /*Maneira que o next disponibiliza para realizar a transação de pagina 
+                            sem acontecer um refresh na página*/
+                            roteamento.push('/chat');
+                        }}
                         styleSheet={{
                             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                             width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
