@@ -2,6 +2,7 @@ import appConfig from '../config.json';
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import { useRouter } from 'next/router';
 import React from 'react';
+//import Background from "../Images/pizz_neon.jpg";
 
 // Componente React
 function Titulo(props) {
@@ -46,8 +47,8 @@ export default function PaginaInicial() {
             <Box
                 styleSheet={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    backgroundColor: appConfig.theme.colors.primary[500],
-                    backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+                    //backgroundColor: appConfig.theme.colors.primary[500],
+                    backgroundImage: 'url()',
                     backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
                 }}
             >
@@ -61,7 +62,8 @@ export default function PaginaInicial() {
                             sm: 'row',
                         },
                         width: '100%', maxWidth: '700px',
-                        borderRadius: '5px', padding: '32px', margin: '16px',
+                        borderTopLeftRadius: '50px', borderBottomRightRadius: '50px', 
+                        padding: '32px', margin: '16px',
                         boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
                         backgroundColor: appConfig.theme.colors.neutrals[700],
                     }}
