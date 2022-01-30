@@ -78,7 +78,8 @@ export default function PaginaInicial() {
 
                             /*Maneira que o next disponibiliza para realizar a transação de pagina 
                             sem acontecer um refresh na página*/
-                            roteamento.push('/chat');
+                            roteamento.push(`/chat?username=${username}`);
+                            // roteamento.push('/chat' + username);
                         }}
                         styleSheet={{
                             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
