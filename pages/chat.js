@@ -4,6 +4,7 @@ import appConfig from '../config.json';
 import { createClient } from '@supabase/supabase-js'
 import {FaPizzaSlice} from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import { ButtonSendSticker } from '../src/components/ButtonSendSticker';
 
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzQwOTA4OSwiZXhwIjoxOTU4OTg1MDg5fQ.CbXmCP_dXGCGKV3X3hIROHgkyOJmYTTJFvm3PJU8fKo';
 const supabase_url = 'https://brghbshtbafnaacnnxqc.supabase.co';
@@ -138,6 +139,7 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
+                        <ButtonSendSticker />
                     </Box>
                 </Box>
             </Box>
