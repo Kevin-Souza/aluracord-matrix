@@ -16,7 +16,13 @@ export default function ChatPage() {
     const usuarioLogado = roteamento.query.username;
     console.log('usuarioLogado', usuarioLogado);
     const [mensagem, setMensagem] = React.useState('');
-    const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
+    const [listaDeMensagens, setListaDeMensagens] = React.useState([
+        {
+            id: 1,
+            de: 'omariosouto',
+            texto: ':sticker: URL_da_imagem',
+        }
+    ]);
 
     React.useEffect(() => {
         supabaseClient
@@ -25,7 +31,7 @@ export default function ChatPage() {
             .order('id', {ascending: false})
             .then(({ data }) => {
                 console.log('Dados da consulta', data);
-                setListaDeMensagens(data);
+                //setListaDeMensagens(data);
             });
     }, []);
 
